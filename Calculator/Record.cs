@@ -193,9 +193,11 @@ namespace Calculator
         {
             StringBuilder operationsHistory = new StringBuilder();
 
-            var lineCount = File.ReadLines(txtPath).Count();
-
-            if (lineCount > 0) counter = lineCount - 1;
+            if (File.Exists(txtPath))
+            {
+                var lineCount = File.ReadLines(txtPath).Count();
+                if (lineCount > 0) counter = lineCount - 1;
+            }
 
             if (!File.Exists(txtPath))
             {
